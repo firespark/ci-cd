@@ -3,5 +3,127 @@
 // default one.
 // -----------------------------------------------------------------------------
 .d-none {
-    display: none;
-  }
+  display: none;
+}
+
+.nav__link {
+  color: #000000;
+}
+
+.full-cart-page__pagination-text {
+  color: #000000;
+}
+
+.clean-card-btn {
+  color: #000000;
+}
+
+.purchase-form__input::-webkit-input-placeholder {
+  color: #000000;
+}
+
+.purchase-form__input:-ms-input-placeholder {
+  color: #000000;
+}
+
+.purchase-form__input::-ms-input-placeholder {
+  color: #000000;
+}
+
+.purchase-form__input::placeholder {
+  color: #000000;
+}
+
+.clean-card-btn {
+  color: #000000;
+}
+
+.link-navigation__link,
+.link-navigation__slash {
+  color: #000000;
+}
+
+.cart-list .product__old-price {
+  color: #000000;
+}
+
+.sort-input::-webkit-input-placeholder {
+  color: #000000;
+}
+
+.sort-input:-ms-input-placeholder {
+  color: #000000;
+}
+
+.sort-input::-ms-input-placeholder {
+  color: #000000;
+}
+
+.sort-input::placeholder {
+  color: #000000;
+}
+
+.full-cart-page__pagination-text {
+  color: #000000;
+}
+
+.cart-list__number {
+  color: #000000;
+  border: 0.5px #000000 solid;
+}
+
+.full-cart-page__promo-input::-webkit-input-placeholder {
+  color: #000000;
+}
+
+.full-cart-page__promo-input:-ms-input-placeholder {
+  color: #000000;
+}
+
+.full-cart-page__promo-input::-ms-input-placeholder {
+  color: #000000;
+}
+
+.full-cart-page__promo-input::placeholder {
+  color: #000000;
+}
+
+.error-page__text {
+  color: #000000;
+}
+
+.product-page__stoke-amount {
+  color: #000000;
+}
+
+.product-page__specification-name {
+  color: #000000;
+  border-bottom: 1px #000000 dotted;
+}
+
+.product__discount span,
+.product__rating span {
+  color: #22795d;
+}
+
+.product__type {
+  color: #22795d;
+}
+
+.product__stock {
+  color: #22795d;
+}
+
+.button-light {
+  color: #000000;
+  border: 2px #000000 solid;
+  font-weight: bold;
+}
+
+.product__discount {
+  background-color: #8e3497;
+}
+
+.footer {
+  background-color: #363636;
+}
