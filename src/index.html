@@ -356,7 +356,7 @@
     </template>
     <!-- product page -->
     <template id="product-page">
-      <section class="product-page page" aria-labelledby="product-title" aria-describedby="product-description">
+      <section class="product-page page" aria-labelledby="page-title" aria-describedby="product-description">
         <div class="link-navigation">
           <a class="link-navigation__link" href="/catalog" aria-label="Go to catalog">Catalog</a>
           <span class="link-navigation__slash"> / </span>
@@ -364,7 +364,7 @@
           <span class="link-navigation__slash"> / </span>
           <a class="link-navigation__link this-page-link" href="#" aria-label="Current page"></a>
         </div>
-        <h2 class="page-title" id="product-title" aria-live="polite"></h2>
+        <h2 class="page-title" id="page-title" aria-live="polite"></h2>
         <div class="product-page__top-block">
           <div class="product-page__photo-block" aria-label="Product image"></div>
           <div class="product-page__sales-block">
@@ -522,7 +522,7 @@
     </template>
     <!-- product cart card -->
     <template id="product-cart-card">
-      <li class="cart-list__item product" role="listitem" aria-labelledby="product-title">
+      <li class="cart-list__item product" role="listitem" aria-labelledby="product-title2">
         <span class="cart-list__number" aria-hidden="true"></span>
         <div class="product__photo">
           <div class="product__icons">
@@ -531,12 +531,12 @@
         </div>
         <div class="product__info">
           <div class="product__type" aria-label="Product type"></div>
-          <h2 class="product__title" id="product-title"></h2>
+          <h2 class="product__title" id="product-title2"></h2>
           <p class="product__description" aria-label="Product description"></p>
           <div class="product__stock">In stock: <span class="product__stock-value" aria-live="polite"></span></div>
           <div class="product__purchase">
             <span class="product__price" aria-label="Product price"></span>
-            <span class="product__old-price" aria-label="Old product price"></span>
+            <span class="product__old-price" aria-live="polite" role="text"></span>
             <div class="product__amount">
               <button class="button-arrow product__left-arrow" aria-label="Decrease quantity" role="button"></button>
               <input
