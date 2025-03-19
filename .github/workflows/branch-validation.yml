@@ -20,7 +20,7 @@ jobs:
           exit 1
 
       - name: Check branch on PR
-        if: ${{ github.event_name == 'pull_request' && !startsWith(github.head_ref, 'feature/') }}
+        if: ${{ github.event_name == 'pull_request' && !startsWith(github.ref_name, 'feature/') }}
         run: |
           echo "You can make PR only from a branch starts with 'feature/'."
           exit 1

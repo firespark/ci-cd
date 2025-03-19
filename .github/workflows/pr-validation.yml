@@ -10,14 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
       - name: Install dependencies
         run: npm install
       - name: Run linting
+        id: lint
         run: npm run lint
     outputs:
       lint-status: ${{ steps.lint.outcome }}
@@ -27,14 +28,15 @@ jobs:
     needs: lint
     steps:
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
       - name: Install dependencies
         run: npm install
       - name: Run tests
+        id: test
         run: npm run test
     outputs:
       test-status: ${{ steps.test.outcome }}
@@ -44,15 +46,18 @@ jobs:
     needs: test
     steps:
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
       - name: Install dependencies
         run: npm install
       - name: Run build
+        id: build
         run: npm run build
+    outputs:
+      build-status: ${{ steps.build.outcome }}
 
   block_merge:
     runs-on: ubuntu-latest
