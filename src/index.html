@@ -7,7 +7,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" href="./assets/svg/empty-cart-icon.svg" />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200;400;500&display=swap" as="style" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200;400;500&display=swap"
+      as="style"
+    />
     <title>Online-store</title>
   </head>
   <body class="body">
@@ -323,19 +327,31 @@
               <div class="sort">
                 <div class="sort__item">
                   Sort by rating
-                  <div data-sort="rating-up" class="sort__up sort-control" aria-label="Sort by rating ascending"></div>
+                  <div
+                    data-sort="rating-up"
+                    class="sort__up sort-control"
+                    role="button"
+                    aria-label="Sort by rating ascending"
+                  ></div>
                   <div
                     data-sort="rating-down"
                     class="sort__down sort-control"
+                    role="button"
                     aria-label="Sort by rating descending"
                   ></div>
                 </div>
                 <div class="sort__item">
                   Sort by price
-                  <div data-sort="price-up" class="sort__up sort-control" aria-label="Sort by price ascending"></div>
+                  <div
+                    data-sort="price-up"
+                    class="sort__up sort-control"
+                    role="button"
+                    aria-label="Sort by price ascending"
+                  ></div>
                   <div
                     data-sort="price-down"
                     class="sort__down sort-control"
+                    role="button"
                     aria-label="Sort by price descending"
                   ></div>
                 </div>
@@ -355,8 +371,8 @@
             </div>
 
             <div class="products__layout layout">
-              <div class="layout__portrait active" aria-label="Portrait layout view"></div>
-              <div class="layout__landscape" aria-label="Landscape layout view"></div>
+              <div class="layout__portrait active" role="button" aria-label="Portrait layout view"></div>
+              <div class="layout__landscape" role="button" aria-label="Landscape layout view"></div>
             </div>
           </div>
 
@@ -371,7 +387,7 @@
     </template>
     <!-- product card -->
     <template id="productCardTemp">
-      <div id="product" class="product" aria-labelledby="product-title" aria-describedby="product-description">
+      <div id="product" class="product">
         <div class="product__photo">
           <div class="product__icons">
             <div class="product__discount" aria-live="polite" aria-label="Discount">
@@ -386,8 +402,8 @@
         </div>
         <div class="product__info">
           <div class="product__type"></div>
-          <h2 id="product-title" class="product__title" aria-live="polite"></h2>
-          <p id="product-description" class="product__description" aria-live="polite"></p>
+          <h2 class="product__title" aria-live="polite"></h2>
+          <p class="product__description" aria-live="polite"></p>
           <div class="product__purchase">
             <div class="product__price usd-symbol" aria-label="Price"></div>
             <button class="product__button button" aria-label="Buy Product"></button>
@@ -400,7 +416,7 @@
     </template>
     <!-- product page -->
     <template id="product-page">
-      <section class="product-page page" aria-labelledby="page-title" aria-describedby="product-description">
+      <section class="product-page page" aria-labelledby="page-title" aria-describedby="product-text">
         <div class="link-navigation">
           <a class="link-navigation__link" href="/catalog" aria-label="Go to catalog">Catalog</a>
           <span class="link-navigation__slash"> / </span>
@@ -425,7 +441,7 @@
             </div>
             <div class="product-page__info-block">
               <p class="subtitle">Description</p>
-              <p class="product-page__info-text" id="product-description" aria-live="polite"></p>
+              <p class="product-page__info-text" id="product-text" aria-live="polite"></p>
             </div>
           </div>
         </div>
