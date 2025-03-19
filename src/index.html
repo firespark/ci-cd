@@ -196,18 +196,22 @@
             <div class="range" aria-live="polite">
               <div class="range__value">
                 <span>min</span>
-                <input type="number" class="input-min" value="1" max="100" aria-label="Minimum price" />
+                <label for="pagination-min-input-desc" class="d-none">Minimum price</label>
+                <input id="pagination-min-input-desc" type="number" class="input-min" value="1" max="100" aria-label="Minimum price" />
                 <span>$</span>
                 <div class="range__separator">-</div>
                 <span>max</span>
-                <input type="number" class="input-max" value="100" max="100" aria-label="Maximum price" />
+                <label for="pagination-max-input-desc" class="d-none">Maximum price</label>
+                <input id="pagination-max-input-desc" type="number" class="input-max" value="100" max="100" aria-label="Maximum price" />
                 <span>$</span>
               </div>
               <div class="range__slider slider">
                 <div class="slider__progress"></div>
               </div>
               <div class="range__range-input">
+                <label for="range-min-input-desc" class="d-none">Minimum price range</label>
                 <input
+                  id="range-min-input-desc"
                   type="range"
                   class="range-min"
                   min="1"
@@ -216,7 +220,9 @@
                   step="1"
                   aria-label="Minimum price range"
                 />
+                <label for="range-max-input-desc" class="d-none">Maximum price range</label>
                 <input
+                  id="range-max-input-desc"
                   type="range"
                   class="range-max"
                   min="1"
@@ -243,16 +249,20 @@
             <div class="range">
               <div class="range__value">
                 <span>min</span>
-                <input type="number" class="input-min" value="1" max="65" aria-label="Minimum stock" />
+                <label for="stock-min-input-desc" class="d-none">Minimum stock range</label>
+                <input id="stock-min-input-desc" type="number" class="input-min" value="1" max="65" aria-label="Minimum stock" />
                 <div class="range__separator">-</div>
                 <span>max</span>
-                <input type="number" class="input-max" value="65" max="65" aria-label="Maximum stock" />
+                <label for="stock-max-input-desc" class="d-none">Maximum stock range</label>
+                <input id="stock-max-input-desc" type="number" class="input-max" value="65" max="65" aria-label="Maximum stock" />
               </div>
               <div class="range__slider slider">
                 <div class="slider__progress"></div>
               </div>
               <div class="range__range-input">
+                <label for="stock-min-range-input-desc" class="d-none">Minimum stock range</label>
                 <input
+                  id="stock-min-range-input-desc"
                   type="range"
                   class="range-min"
                   min="1"
@@ -261,7 +271,9 @@
                   step="1"
                   aria-label="Minimum stock range"
                 />
+                <label for="stock-max-range-input-desc" class="d-none">Maximum stock range</label>
                 <input
+                  id="stock-max-range-input-desc"
                   type="range"
                   class="range-max"
                   min="1"
@@ -307,7 +319,8 @@
                 Found:
                 <div><span class="found-products__num">24</span><span class="found-products__num"> / 24</span></div>
               </div>
-              <input type="text" placeholder="Search" class="sort-input" aria-label="Search products" />
+              <label for="search-input-desc" class="d-none">Search</label>
+              <input id="search-input-desc" type="text" placeholder="Search" class="sort-input" aria-label="Search products" />
             </div>
 
             <div class="products__layout layout">
@@ -430,6 +443,7 @@
                 >
                   &lt;
                 </button>
+                <label for="paginationCurrentPage" class="d-none">Current page</label>
                 <input
                   class="amount-number"
                   id="paginationCurrentPage"
@@ -450,6 +464,7 @@
                   &gt;
                 </button>
                 <span class="full-cart-page__pagination-text">of</span>
+                <label for="pagination-max-pages" class="d-none">Total pages</label>
                 <input
                   class="amount-number"
                   id="pagination-max-pages"
@@ -471,6 +486,7 @@
                 >
                   &lt;
                 </button>
+                <label for="pagination-items" class="d-none">Amount number</label>
                 <input class="amount-number" id="pagination-items" type="text" disabled />
                 <button
                   class="button-arrow"
@@ -488,7 +504,9 @@
         </div>
         <div class="full-cart-page__panel" id="bill" aria-labelledby="bill-title">
           <div class="full-cart-page__promo">
+            <label for="promo-code-input-desc" class="d-none">Promo Code</label>
             <input
+              id="promo-code-input-desc"
               class="full-cart-page__promo-input"
               type="text"
               placeholder="PROMO CODE"
@@ -522,7 +540,7 @@
     </template>
     <!-- product cart card -->
     <template id="product-cart-card">
-      <li class="cart-list__item product" role="listitem" aria-labelledby="product-title2">
+      <li class="cart-list__item product" role="listitem">
         <span class="cart-list__number" aria-hidden="true"></span>
         <div class="product__photo">
           <div class="product__icons">
@@ -531,7 +549,7 @@
         </div>
         <div class="product__info">
           <div class="product__type" aria-label="Product type"></div>
-          <h2 class="product__title" id="product-title2"></h2>
+          <h2 class="product__title"></h2>
           <p class="product__description" aria-label="Product description"></p>
           <div class="product__stock">In stock: <span class="product__stock-value" aria-live="polite"></span></div>
           <div class="product__purchase">
@@ -539,7 +557,9 @@
             <span class="product__old-price" aria-live="polite" role="text"></span>
             <div class="product__amount">
               <button class="button-arrow product__left-arrow" aria-label="Decrease quantity" role="button"></button>
+              <label for="product-quantity-input-desc" class="d-none">Product quantity</label>
               <input
+                id="product-quantity-input-desc"
                 class="product__amount-number amount-number"
                 type="number"
                 min="0"
