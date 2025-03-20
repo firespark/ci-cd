@@ -14,13 +14,13 @@ jobs:
 
     steps:
       - name: Check branch name on push
-        if: ${{ github.event_name == 'push' && !startsWith(github.ref_name, 'feature/') }}
+        if: ${{ github.event_name == 'push' && !startsWith(github.ref_name, 'feature/') && github.ref_name != 'gh-pages' }}
         run: |
-          echo "You can push only in a branch starts with 'feature/'."
+          echo "You can push only in a branch that starts with 'feature/' or is 'gh-pages'."
           exit 1
 
       - name: Check branch on PR
-        if: ${{ github.event_name == 'pull_request' && !startsWith(github.ref_name, 'feature/') }}
+        if: ${{ github.event_name == 'pull_request' && !startsWith(github.ref_name, 'feature/') && github.ref_name != 'gh-pages' }}
         run: |
-          echo "You can make PR only from a branch starts with 'feature/'."
+          echo "You can make PR only from a branch that starts with 'feature/' or is 'gh-pages'."
           exit 1
