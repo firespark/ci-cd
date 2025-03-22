@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  validate-branch-name:
+  validate-pr-branch-name:
     runs-on: ubuntu-latest
     steps:
       - name: Check branch on PR
