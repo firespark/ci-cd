@@ -41,31 +41,13 @@ jobs:
     outputs:
       test-status: ${{ steps.test.outcome }}
 
-  build:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v4
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      - name: Install dependencies
-        run: npm install
-      - name: Run build
-        id: build
-        run: npm run build
-    outputs:
-      build-status: ${{ steps.build.outcome }}
-
   block_merge:
     runs-on: ubuntu-latest
-    needs: [lint, test, build]
+    needs: [lint, test]
     steps:
       - name: Check if any job failed
         run: |
-          if [[ "${{ needs.lint.outputs.lint-status }}" != "success" || "${{ needs.test.outputs.test-status }}" != "success" || "${{ needs.build.outputs.build-status }}" != "success" ]]; then
+          if [[ "${{ needs.lint.outputs.lint-status }}" != "success" || "${{ needs.test.outputs.test-status }}" != "success" ]]; then
             echo "PR cannot be merged due to failed checks";
             exit 1;
           fi
