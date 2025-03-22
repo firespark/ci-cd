@@ -1,2 +1,2 @@
-# online-store
+# test
 TypeScript online store project
