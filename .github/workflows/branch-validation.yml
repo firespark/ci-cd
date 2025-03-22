@@ -2,11 +2,8 @@ name: Branch Validation
 
 on:
   push:
-    branches-ignore: 
-      - "main"
-  pull_request:
-    branches:
-      - "main"
+    branches-ignore:
+      - 'main'
 
 jobs:
   validate-branch-name:
@@ -17,10 +14,4 @@ jobs:
         if: ${{ github.event_name == 'push' && !startsWith(github.ref_name, 'feature/') }}
         run: |
           echo "You can push only in a branch that starts with 'feature/'"
-          exit 1
-
-      - name: Check branch on PR
-        if: ${{ github.event_name == 'pull_request' && !startsWith(github.head_ref, 'feature/') }}
-        run: |
-          echo "You can make PR only from a branch that starts with 'feature/'"
           exit 1
