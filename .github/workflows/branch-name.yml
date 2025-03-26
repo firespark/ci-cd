@@ -1,0 +1,16 @@
+name: Branch Name Check
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  check-branch-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch name
+        if: ${{ !startsWith(github.ref, 'refs/heads/feature/') }}
+        run: |
+          echo "Branch name must start with 'feature/'"
+          exit 1
