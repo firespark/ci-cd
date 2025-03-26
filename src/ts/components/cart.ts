@@ -25,7 +25,7 @@ class Cart {
       const plant = plants.products.filter((plant) => plant.id.toString() === key)[0];
       answer += this.basket[key] * plant.price;
     }
-    return answer;
+    // return answer;
   }
 
   public getProductOldSum() {
