@@ -1,0 +1,17 @@
+name: Branch Validation
+
+on:
+  push:
+    branches-ignore:
+      - 'main'
+
+jobs:
+  validate-branch-name:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check branch name on push
+        if: ${{ github.event_name == 'push' && !startsWith(github.ref_name, 'feature/') }}
+        run: |
+          echo "You can push only in a branch that starts with 'feature/'"
+          exit 1
