@@ -1,0 +1,51 @@
+name: PR Validation
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-pr-branch-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch on PR
+        if: ${{ github.event_name == 'pull_request' && !startsWith(github.head_ref, 'feature/') }}
+        run: |
+          echo "You can make PR only from a branch that starts with 'feature/'"
+          exit 1
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install
+      - name: Run linting
+        id: lint
+        run: npm run lint
+    outputs:
+      lint-status: ${{ steps.lint.outcome }}
+
+  test:
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install
+      - name: Run tests
+        id: test
+        run: npm run test
+    outputs:
+      test-status: ${{ steps.test.outcome }}
