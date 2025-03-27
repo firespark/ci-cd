@@ -182,10 +182,14 @@ class PurchaseModal {
       payNowBtn.classList.replace('button-unable', 'button');
       this.formValid = true;
       payNowBtn.innerText = 'Buy now!';
+      payNowBtn.setAttribute('aria-label', 'Buy now');
+      payNowBtn.setAttribute('aria-disabled', 'false');
     } else {
       payNowBtn.classList.replace('button', 'button-unable');
       this.formValid = false;
       payNowBtn.innerText = 'Fill in all the fields';
+      payNowBtn.setAttribute('aria-label', 'Fill in all the fields');
+      payNowBtn.setAttribute('aria-disabled', 'true');
     }
   }
 
